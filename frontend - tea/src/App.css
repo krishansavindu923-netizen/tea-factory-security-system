@@ -1,0 +1,364 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === ADDED ANIMATIONS FOR CCTV SYSTEM === */
+
+/* Pulse animation for live indicators */
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.7; 
+    transform: scale(1.05);
+  }
+}
+
+/* Blink animation for recording indicators */
+@keyframes blink {
+  0%, 50% { 
+    opacity: 1; 
+  }
+  51%, 100% { 
+    opacity: 0; 
+  }
+}
+
+/* Fade in animation for components */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Bounce animation for buttons */
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Shake animation for errors */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Glow effect for active elements */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.6);
+  }
+}
+
+/* Loading spinner animation */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* === GENERAL HOVER EFFECTS === */
+
+/* Button hover effects */
+button:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Enhanced button active state */
+button:active {
+  transform: translateY(0);
+  transition: all 0.1s ease;
+}
+
+/* Card hover effects */
+.camera-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* === SMOOTH TRANSITIONS === */
+
+/* Global smooth transitions */
+* {
+  transition: all 0.2s ease;
+}
+
+/* Specific transitions for form elements */
+input, select, textarea {
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+/* Navigation transitions */
+.nav-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .camera-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .nav-container button {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+  
+  /* Reduce animations on mobile for performance */
+  .camera-card:hover {
+    transform: none;
+  }
+  
+  /* Simplified transitions for mobile */
+  * {
+    transition: all 0.1s ease;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container button {
+    padding: 10px 15px;
+    font-size: 11px;
+  }
+  
+  /* Disable complex animations on very small screens */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+}
+
+/* === UTILITY CLASSES === */
+
+/* Animation utility classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.bounce-in {
+  animation: bounce 0.8s ease-out;
+}
+
+.shake-error {
+  animation: shake 0.5s ease-in-out;
+}
+
+.glow-active {
+  animation: glow 2s infinite;
+}
+
+.loading-spinner {
+  animation: spinner 1s linear infinite;
+}
+
+/* === CCTV SPECIFIC STYLES === */
+
+/* Live indicator pulse */
+.live-indicator {
+  animation: pulse 2s infinite;
+}
+
+/* Recording indicator blink */
+.recording-indicator {
+  animation: blink 1s infinite;
+}
+
+/* Camera card entrance */
+.camera-card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.camera-card:nth-child(1) { animation-delay: 0.1s; }
+.camera-card:nth-child(2) { animation-delay: 0.2s; }
+.camera-card:nth-child(3) { animation-delay: 0.3s; }
+.camera-card:nth-child(4) { animation-delay: 0.4s; }
+.camera-card:nth-child(5) { animation-delay: 0.5s; }
+.camera-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Status cards animation */
+.status-card {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.status-card:nth-child(even) {
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* === DARK MODE SUPPORT (Optional) === */
+
+@media (prefers-color-scheme: dark) {
+  .App {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  /* Adjust glow effects for dark mode */
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+/* === ACCESSIBILITY === */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .live-indicator,
+  .recording-indicator {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  button {
+    border: 2px solid;
+  }
+  
+  .live-indicator {
+    border: 2px solid;
+  }
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+  .camera-controls,
+  .navigation,
+  .floating-buttons {
+    display: none !important;
+  }
+  
+  .camera-card {
+    break-inside: avoid;
+  }
+  
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

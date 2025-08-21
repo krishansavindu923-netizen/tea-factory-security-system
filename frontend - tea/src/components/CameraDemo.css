@@ -1,0 +1,112 @@
+.camera-demo-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  padding: 20px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.demo-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.demo-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ecf0f1;
+}
+
+.demo-header h2 {
+  font-size: 1.5rem;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.demo-header p {
+  font-size: 1rem;
+  color: #bdc3c7;
+  margin: 0;
+}
+
+.demo-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.camera-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.demo-instructions {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.demo-instructions h3 {
+  color: #f39c12;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.demo-instructions ol {
+  margin-bottom: 25px;
+  padding-left: 20px;
+}
+
+.demo-instructions li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.demo-features h4 {
+  color: #e74c3c;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.demo-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.demo-features li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.demo-features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .demo-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .demo-header h1 {
+    font-size: 2rem;
+  }
+  
+  .demo-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .demo-instructions {
+    padding: 20px;
+  }
+}
